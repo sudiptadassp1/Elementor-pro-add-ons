@@ -15,7 +15,7 @@ class Elementor_Post_Gallery extends \Elementor\Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'basic' ];
+		return [ 'elementor-pro-add-ons' ];
 	}
     
 	protected function _register_controls(){
