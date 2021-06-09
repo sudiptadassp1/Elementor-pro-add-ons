@@ -55,5 +55,6 @@ class Elementor_Post_Gallery extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 		echo "<a href='".$settings['url']."'>".$settings['title']."</a>";
 	}
+}
 
 	
