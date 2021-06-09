@@ -69,21 +69,21 @@ final class Elementor_Pro_Add_ons {
 
 	}
 
-	public function register_custom_widget_categories()
+	public function register_custom_widget_categories($elements_manager)
     {
-        \Elementor\Plugin::instance()->elements_manager->add_category(
-            'elementor-pro-add-ons',
-            [
-                'title' => __('Elementor Pro Add-ons', 'elementor-pro-add-ons'),
-                'icon' => 'fa fa-plug',
-            ]
-        );
+		$elements_manager->add_category(
+			'elementor-pro-add-ons',
+			[
+				'title' => __( 'Elementor Pro Add-ons', 'elementor-pro-add-ons' ),
+				'icon' => 'fa fa-plug',
+			]
+		);
     }
 
 	public function init() {
 	
 		$this->i18n();
-		add_action('elementor/init', [$this, 'register_custom_widget_categories']);
+		add_action('elementor/elements/categories_registered', [$this, 'register_custom_widget_categories']);
 		add_action( 'elementor/widgets/widgets_registered', [ $this, 'init_widgets' ] );
 		// add_action( 'elementor/controls/controls_registered', [ $this, 'init_controls' ] );
 
